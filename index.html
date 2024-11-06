@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Reservasi Ruangan Kelas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Sistem Reservasi Ruangan Kelas</h1>
+
+    <!-- Daftar Ruangan dan Pencarian -->
+    <section id="room-list">
+        <div class="room-header">
+            <h2>Daftar Ruangan</h2>
+            <div class="filter-container">
+                <label for="filter-date">Filter Tanggal:</label>
+                <input type="date" id="filter-date">
+                <button onclick="filterRooms()">Tampilkan Ruangan Tersedia</button>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nomor Ruangan</th>
+                    <th>Kapasitas</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="room-list-body">
+                <!-- Daftar ruangan akan ditampilkan di sini -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Formulir Reservasi -->
+    <section id="reservation-form">
+        <h2>Formulir Reservasi</h2>
+        <form id="reserve-form">
+            <label for="name">Nama Pemesan:</label>
+            <input type="text" id="name" required>
+
+            <label for="room-number">Nomor Ruangan:</label>
+            <input type="number" id="room-number" required>
+
+            <label for="date">Tanggal Reservasi:</label>
+            <input type="date" id="date" required>
+
+            <label for="start-time">Waktu Mulai:</label>
+            <input type="time" id="start-time" required>
+
+            <label for="duration">Durasi (jam):</label>
+            <input type="number" id="duration" min="1" required>
+
+            <button type="submit">Pesan Ruangan</button>
+        </form>
+        <p id="error-message" style="color: red;"></p>
+    </section>
+
+    <!-- Daftar Reservasi -->
+    <section id="reservation-list">
+        <h2>Daftar Reservasi</h2>
+        <ul id="reservation-list-body">
+            <!-- Daftar reservasi akan ditampilkan di sini -->
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
